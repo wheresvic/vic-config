@@ -85,6 +85,7 @@ unset markers                                  # no ugly plus signs
 
 # Unbind bounce
 bind index,pager b noop
+bind index,pager A create-alias
 
 # Gmail style keybindings
 bind  editor <space> noop
@@ -116,10 +117,10 @@ folder-hook +[Gmail]/Starred bind  index,pager y flag-message #"Toggle star"
 
 
 # Contact aliases, could also use `goobook`.
-#set alias_file		= ~/.mutt/aliases
-#set sort_alias		= alias
-#set reverse_alias	= yes
-#set reverse_name	= yes
+set alias_file		= ~/.mutt/aliases
+set sort_alias		= alias
+set reverse_alias	= yes
+set reverse_name	= yes
 
 #set alias_file          = '~/.mutt/aliases.txt'
 #set display_filter      = '~/.mutt/aliases.sh'
