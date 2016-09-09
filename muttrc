@@ -8,8 +8,9 @@ set edit_headers        = yes
 # Gmail info
 set imap_user           = "victorparmar@gmail.com"
 set imap_keepalive      = 30
+unset imap_passive                             # allow mutt to open new imap connection automatically
 set folder              = "imaps://imap.gmail.com"
-set spoolfile           = "+INBOX"
+set spoolfile           = "+[Gmail]/All Mail"
 set postponed           = "+[Gmail]/Drafts"
 set record              = "+[Gmail]/Sent Mail"
 set header_cache        = ~/.mutt/victorparmar/headers
@@ -55,6 +56,7 @@ set sort_aux            = reverse-last-date-received # like gmail
 set uncollapse_jump                            # don't collapse on an unread message
 set sort_re                                    # thread based on regex
 set reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set fast_reply                                 # do not ask for to, subject, etc when replying
 
 set sidebar_delim       = '  │'
 set sidebar_visible     = yes
@@ -64,7 +66,7 @@ set status_chars        = " *%A"
 set status_format       = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
 
 # mailboxes /var/mail/vic ~/Mail/sent
-mailboxes ="INBOX" ='[Gmail]/Drafts' ='[Gmail]/Sent Mail' ='work'
+mailboxes ='INBOX' ='[Gmail]/All Mail' ='[Gmail]/Drafts' ='[Gmail]/Sent Mail' ='work'
 
 set pager_index_lines   = 10                   # number of index lines to show
 set pager_context       = 3                    # number of context lines to show
@@ -106,6 +108,7 @@ macro index,pager gd <change-folder>=[Gmail]/Drafts<enter>	"Go to 'Drafts'"
 macro index,pager gl <change-folder>?				"Go to 'Label'"
 macro index,pager gi <change-folder>=INBOX<enter> 		"Go to inbox"
 macro index,pager gt "<change-folder>=[Gmail]/Sent Mail<enter>"	"Go to 'Sent Mail'"
+macro index,pager d "<save-message>=[Gmail]/Trash<enter>" "Trash"
 #folder-hook +INBOX 'macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive conversation"'
 folder-hook +[Gmail]/Trash macro index,pager y <save-message>=INBOX<enter><enter> "Move to inbox"
 folder-hook +[Gmail]/Starred bind  index,pager y flag-message #"Toggle star"
@@ -117,7 +120,11 @@ folder-hook +[Gmail]/Starred bind  index,pager y flag-message #"Toggle star"
 #set sort_alias		= alias
 #set reverse_alias	= yes
 #set reverse_name	= yes
+
+#set alias_file          = '~/.mutt/aliases.txt'
+#set display_filter      = '~/.mutt/aliases.sh'
 #source $alias_file
+
 
 # colors!
 source ~/vic-config/mutt-colors-solarized-dark-256.muttrc 
