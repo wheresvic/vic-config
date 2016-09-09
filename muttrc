@@ -7,6 +7,7 @@ set edit_headers        = yes
 
 # Gmail info
 set imap_user           = "victorparmar@gmail.com"
+set imap_keepalive      = 30
 set folder              = "imaps://imap.gmail.com"
 set spoolfile           = "+INBOX"
 set postponed           = "+[Gmail]/Drafts"
