@@ -1,73 +1,75 @@
 source "gpg -d ~/.mutt/victorparmar.gpg |"
 
-set from="Victor Parmar <victorparmar@gmail.com>"
-set edit_headers=yes
+set editor		= "vim"
+
+set from                = "Victor Parmar <victorparmar@gmail.com>"
+set edit_headers        = yes
 
 # Gmail info
-set imap_user = "victorparmar@gmail.com"
-set folder = "imaps://imap.gmail.com"
-set spoolfile = "+INBOX"
-set postponed = "+[Gmail]/Drafts"
-set record = "+[Gmail]/Sent Mail"
-set header_cache = ~/.mutt/victorparmar/headers
-set message_cachedir = ~/.mutt/victorparmar/bodies
-set certificate_file = ~/.mutt/certificates
-set smtp_url = "smtp://victorparmar@smtp.gmail.com:587/"
+set imap_user           = "victorparmar@gmail.com"
+set folder              = "imaps://imap.gmail.com"
+set spoolfile           = "+INBOX"
+set postponed           = "+[Gmail]/Drafts"
+set record              = "+[Gmail]/Sent Mail"
+set header_cache        = ~/.mutt/victorparmar/headers
+set message_cachedir    = ~/.mutt/victorparmar/bodies
+set certificate_file    = ~/.mutt/certificates
+set smtp_url            = "smtp://victorparmar@smtp.gmail.com:587/"
 
-#set folder           = ~/Mail               # mailbox location
-#set tmpdir="/tmp"
-#set record="+sent" 
-#set mbox="+mbox"
-#set postponed="+postponed"
+#set folder             = ~/Mail               # mailbox location
+#set tmpdir             = "/tmp"
+#set record             = "+sent" 
+#set mbox               = "+mbox"
+#set postponed          = "+postponed"
 
-set wait_key = no        # shut up, mutt
-set mbox_type = Maildir  # mailbox type
-set timeout = 3          # idle time before scanning
-set mail_check = 0       # minimum time between scans
-unset move               # gmail does that
-set delete               # don't ask, just do
-unset confirmappend      # don't ask, just do!
-set quit                 # don't ask, just do!!
-unset mark_old           # read/new is good enough for me
-set beep_new             # bell on new mails
-set pipe_decode          # strip headers and eval mimes when piping
-set thorough_search      # strip headers and eval mimes before searching
+set wait_key            = no                   # shut up, mutt
+set mbox_type           = Maildir              # mailbox type
+set timeout             = 3                    # idle time before scanning
+set mail_check          = 0                    # minimum time between scans
+unset move                                     # gmail does that
+set delete                                     # don't ask, just do
+unset confirmappend                            # don't ask, just do!
+set quit                                       # don't ask, just do!!
+unset mark_old                                 # read/new is good enough for me
+set beep_new                                   # bell on new mails
+set pipe_decode                                # strip headers and eval mimes when piping
+set thorough_search                            # strip headers and eval mimes before searching
 
-ignore *                                # ignore all headers
-unignore from: to: cc: date: subject:   # show only these
-unhdr_order *                           # some distros order things by default
-hdr_order from: to: cc: date: subject:  # and in this order
+ignore *                                       # ignore all headers
+unignore from: to: cc: date: subject:          # show only these
+unhdr_order *                                  # some distros order things by default
+hdr_order from: to: cc: date: subject:         # and in this order
 
-set date_format = "%m/%d"
-set index_format = "[%Z]  %D  %-20.20F  %s"
-set sort = threads                         # like gmail
-set sort_aux = reverse-last-date-received  # like gmail
-set uncollapse_jump                        # don't collapse on an unread message
-set sort_re                                # thread based on regex
-set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"set date_format = "%m/%d"
-set index_format = "[%Z]  %D  %-20.20F  %s"
-set sort = threads                         # like gmail
-set sort_aux = reverse-last-date-received  # like gmail
-set uncollapse_jump                        # don't collapse on an unread message
-set sort_re                                # thread based on regex
-set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set date_format         = "%m/%d"
+set index_format        = "[%Z]  %D  %-20.20F  %s"
+set sort                = threads              # like gmail
+set sort_aux            = reverse-last-date-received # like gmail
+set uncollapse_jump                            # don't collapse on an unread message
+set sort_re                                    # thread based on regex
+set reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set date_format         = "%m/%d"
+set index_format        = "[%Z]  %D  %-20.20F  %s"
+set sort                = threads              # like gmail
+set sort_aux            = reverse-last-date-received # like gmail
+set uncollapse_jump                            # don't collapse on an unread message
+set sort_re                                    # thread based on regex
+set reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
-set sidebar_delim   = '  │'
-set sidebar_visible = yes
-set sidebar_width   = 24
+set sidebar_delim       = '  │'
+set sidebar_visible     = yes
+set sidebar_width       = 24
 
-set status_chars  = " *%A"
-set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+set status_chars        = " *%A"
+set status_format       = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
 
-mailboxes /var/mail/vic \
-          ~/Mail/sent \
+mailboxes /var/mail/vic ~/Mail/sent
 
-set pager_index_lines = 10 # number of index lines to show
-set pager_context = 3      # number of context lines to show
-set pager_stop             # don't go to next message automatically
-set menu_scroll            # scroll in menus
-set tilde                  # show tildes like in vim
-unset markers              # no ugly plus signs
+set pager_index_lines   = 10                   # number of index lines to show
+set pager_context       = 3                    # number of context lines to show
+set pager_stop                                 # don't go to next message automatically
+set menu_scroll                                # scroll in menus
+set tilde                                      # show tildes like in vim
+unset markers                                  # no ugly plus signs
 
 #Shortcuts
 # bind index CP sidebar-prev
@@ -77,8 +79,46 @@ unset markers              # no ugly plus signs
 # macro pager b 'toggle sidebar_visible'
 # bind index B bounce-message
 
-bind pager b noop
-bind index b noop
+# Unbind bounce
+bind index,pager b noop
+
+# Gmail style keybindings
+bind  editor <space> noop
+bind  index,pager c  mail 		#Compose
+macro index,pager e  "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive conversation"
+bind  generic     x  tag-entry		#Select Conversation
+bind  index       x  tag-thread		#Select Conversation
+bind  pager       x  tag-message	#Select Conversation
+bind  index,pager s  flag-message	#Star a message
+macro index,pager +  <save-message>=[Gmail]/Important<enter><enter> "Mark as important"
+macro index,pager !  <save-message>=[Gmail]/Spam<enter><enter> "Report spam"
+bind  index,pager a  group-reply	#Reply all
+bind  index,pager \# delete-thread	#Delete
+bind  index,pager l  copy-message	#Label
+#bind  index,pager v  save-message	#Move to
+macro index,pager I  <set-flag>O	"Mark as read"
+macro index,pager U  <clear-flag>O	"Mark as unread"
+macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>"	"Go to all mail"
+macro index,pager gs <change-folder>=[Gmail]/Starred<enter>	"Go to 'Starred'"
+macro index,pager gd <change-folder>=[Gmail]/Drafts<enter>	"Go to 'Drafts'"
+macro index,pager gl <change-folder>?				"Go to 'Label'"
+macro index,pager gi <change-folder>=INBOX<enter> 		"Go to inbox"
+macro index,pager gt "<change-folder>=[Gmail]/Sent Mail<enter>"	"Go to 'Sent Mail'"
+#folder-hook +INBOX 'macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive conversation"'
+folder-hook +[Gmail]/Trash macro index,pager y <save-message>=INBOX<enter><enter> "Move to inbox"
+folder-hook +[Gmail]/Starred bind  index,pager y flag-message #"Toggle star"
+
+
+
+# Contact aliases, could also use `goobook`.
+#set alias_file		= ~/.mutt/aliases
+#set sort_alias		= alias
+#set reverse_alias	= yes
+#set reverse_name	= yes
+#source $alias_file
+
+# colors!
+source ~/vic-config/mutt-colors-solarized-dark-256.muttrc 
 
 push <show-version>
 
