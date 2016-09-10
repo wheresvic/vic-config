@@ -12,11 +12,11 @@ unset imap_passive                             # allow mutt to open new imap con
 set folder              = "imaps://imap.gmail.com"
 set spoolfile           = "+[Gmail]/All Mail"
 set postponed           = "+[Gmail]/Drafts"
-set record              = "+[Gmail]/Sent Mail"
 set header_cache        = ~/.mutt/victorparmar/headers
 set message_cachedir    = ~/.mutt/victorparmar/bodies
 set certificate_file    = ~/.mutt/certificates
 set smtp_url            = "smtp://victorparmar@smtp.gmail.com:587/"
+set move                = no
 
 #set folder             = ~/Mail               # mailbox location
 #set tmpdir             = "/tmp"
@@ -28,10 +28,8 @@ set wait_key            = no                   # shut up, mutt
 set mbox_type           = Maildir              # mailbox type
 set timeout             = 60                   # idle time before scanning
 set mail_check          = 60                   # minimum time between scans
-unset move                                     # gmail does that
 set delete                                     # don't ask, just do
 unset confirmappend                            # don't ask, just do!
-set quit                                       # don't ask, just do!!
 unset mark_old                                 # read/new is good enough for me
 set beep_new                                   # bell on new mails
 set pipe_decode                                # strip headers and eval mimes when piping
