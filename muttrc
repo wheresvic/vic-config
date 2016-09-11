@@ -24,6 +24,7 @@ set move                = no
 #set mbox               = "+mbox"
 #set postponed          = "+postponed"
 
+set quit                = ask-yes
 set wait_key            = no                   # shut up, mutt
 set mbox_type           = Maildir              # mailbox type
 set timeout             = 60                   # idle time before scanning
