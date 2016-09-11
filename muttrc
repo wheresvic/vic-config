@@ -41,14 +41,7 @@ unignore from: to: cc: date: subject:          # show only these
 unhdr_order *                                  # some distros order things by default
 hdr_order from: to: cc: date: subject:         # and in this order
 
-set date_format         = "%m/%d"
-set index_format        = "[%Z]  %D  %-20.20F  %s"
-set sort                = threads              # like gmail
-set sort_aux            = reverse-last-date-received # like gmail
-set uncollapse_jump                            # don't collapse on an unread message
-set sort_re                                    # thread based on regex
-set reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
-set date_format         = "%d/%m"              # the date format: dd/mm
+set date_format         = "%d/%m/%y"           # the date format: dd/mm/yy
 set index_format        = "[%Z]  %D  %-20.20F  %s" # format of the index view, show all flags, date, the sender and finally the subject
 set sort                = threads              # like gmail
 set sort_aux            = reverse-last-date-received # like gmail
