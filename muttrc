@@ -1,6 +1,6 @@
 source "gpg -d ~/.mutt/victorparmar.gpg |"
 
-set editor		          = "vim"                # use vim as the default editor
+set editor              = "vim"                                        # use vim as the default editor
 
 set from                = "Victor Parmar <victorparmar@gmail.com>"
 set edit_headers        = yes
@@ -8,7 +8,7 @@ set edit_headers        = yes
 # Gmail info
 set imap_user           = "victorparmar@gmail.com"
 set imap_keepalive      = 30
-unset imap_passive                             # allow mutt to open new imap connection automatically
+unset imap_passive                                                     # allow mutt to open new imap connection automatically
 set folder              = "imaps://imap.gmail.com"
 set spoolfile           = "+[Gmail]/All Mail"
 set postponed           = "+[Gmail]/Drafts"
@@ -16,39 +16,41 @@ set header_cache        = ~/.mutt/victorparmar/headers
 set message_cachedir    = ~/.mutt/victorparmar/bodies
 set certificate_file    = ~/.mutt/certificates
 set smtp_url            = "smtp://victorparmar@smtp.gmail.com:587/"
-set move                = no                   # Don't ask me to move messages out of my inbox when I quit.
+set move                = no                                           # Don't ask me to move messages out of my inbox when I quit.
 
-#set folder             = ~/Mail               # mailbox location
+#set folder             = ~/Mail                                       # mailbox location
 #set tmpdir             = "/tmp"
 #set record             = "+sent" 
 #set mbox               = "+mbox"
 #set postponed          = "+postponed"
 
-set quit                = ask-yes              # confirm before quitting
-set wait_key            = no                   # Don't ask me to press a key to continue after I did a shell escape and came back
-set mbox_type           = Maildir              # mailbox type
-set timeout             = 60                   # idle time before scanning
-set mail_check          = 60                   # minimum time between scans
-set delete                                     # don't ask, just do
-unset confirmappend                            # When saving a message, append the message to an existing mailbox without asking (Why should it ask, anyway? Mailboxes generally have multiple messages...)
-unset mark_old                                 # read/new is good enough for me
-set beep_new                                   # bell on new mails
-set pipe_decode                                # strip headers and eval mimes when piping
-set thorough_search                            # strip headers and eval mimes before searching
+set quit                = ask-yes                                      # confirm before quitting
+set wait_key            = no                                           # Don't ask me to press a key to continue after I did a shell escape and came back
+set mbox_type           = Maildir                                      # mailbox type
+set timeout             = 60                                           # idle time before scanning
+set mail_check          = 60                                           # minimum time between scans
+set delete                                                             # don't ask, just do
+unset confirmappend                                                    # When saving a message, append the message to an existing mailbox without asking (Why should it ask, anyway? Mailboxes generally have multiple messages...)
+unset mark_old                                                         # read/new is good enough for me
+set beep_new                                                           # bell on new mails
+set pipe_decode                                                        # strip headers and eval mimes when piping
+set thorough_search                                                    # strip headers and eval mimes before searching
 
-ignore *                                       # ignore all headers
-unignore from: to: cc: date: subject:          # show only these
-unhdr_order *                                  # some distros order things by default
-hdr_order from: to: cc: date: subject:         # and in this order
+ignore *                                                               # ignore all headers
+unignore from: to: cc: date: subject:                                  # show only these
+unhdr_order *                                                          # some distros order things by default
+hdr_order from: to: cc: date: subject:                                 # and in this order
 
-set date_format         = "%d/%m/%y"           # the date format: dd/mm/yy
-set index_format        = "[%Z]  %D  %-20.20F  %s" # format of the index view, show all flags, date, the sender and finally the subject
-set sort                = threads              # like gmail
-set sort_aux            = reverse-last-date-received # like gmail
-set uncollapse_jump                            # don't collapse on an unread message
-set sort_re                                    # thread based on regex
+set date_format         = "%d-%m-%y"                                   # a simple date format
+set index_format        = "[%Z]  %D  %-20.20F  %s"                     # format of the index view, show all flags, date, the sender and finally the subject
+set sort                = threads                                      # like gmail
+set sort_aux            = reverse-last-date-received                   # like gmail
+set uncollapse_jump                                                    # don't collapse on an unread message
+set sort_re                                                            # thread based on regex
 set reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
-set fast_reply                                 # do not ask for to, subject, etc when replying
+set fast_reply                                                         # do not ask for to, subject, etc when replying
+set forward_format      = "Fwd: %s"                                    # when forwarding email, simply add a Fwd to the subject
+
 
 set sidebar_delim       = '  │'
 set sidebar_visible     = yes
@@ -60,33 +62,33 @@ set status_format       = "───[ Folder: %f ]───[%r%m messages%?n? (%
 # mailboxes /var/mail/vic ~/Mail/sent
 mailboxes ='INBOX' ='[Gmail]/All Mail' ='[Gmail]/Drafts' ='[Gmail]/Sent Mail' ='work'
 
-set pager_index_lines   = 10                   # number of index lines to show
-set pager_context       = 5                    # When going to the next page, keep the bottom two lines of this page on top so that I have some context
-set pager_stop          = yes                  # If I'm at the end of a message and I try to go to the next page, don't move me to the next message
-set menu_scroll                                # scroll in menus
-set tilde                                      # show tildes like in vim
-unset markers                                  # In the pager, don't display + at the beginning of wrapped lines; it's distracting
+set pager_index_lines   = 10                                           # number of index lines to show
+set pager_context       = 5                                            # When going to the next page, keep the bottom two lines of this page on top so that I have some context
+set pager_stop          = yes                                          # If I'm at the end of a message and I try to go to the next page, don't move me to the next message
+set menu_scroll                                                        # scroll in menus
+set tilde                                                              # show tildes like in vim
+unset markers                                                          # In the pager, don't display + at the beginning of wrapped lines; it's distracting
 
 
 # Custom keybindings
-bind index,pager b noop                        # Unbind bounce
-bind index,pager A create-alias                # bind alias-creation
-bind pager <up> previous-line                  # scroll inside the message rather than the index
-bind pager <down> next-line                    # scroll inside the message rather than the index
+bind index,pager b noop                                                # Unbind bounce
+bind index,pager A create-alias                                        # bind alias-creation
+bind pager <up> previous-line                                          # scroll inside the message rather than the index
+bind pager <down> next-line                                            # scroll inside the message rather than the index
 
 
 # Gmail style keybindings
 bind  editor <space> noop
-bind  index,pager c  mail 		                 # compose
-bind  generic     x  tag-entry		             # Select Conversation
-bind  index       x  tag-thread		             # Select Conversation
-bind  pager       x  tag-message	             # Select Conversation
-bind  index,pager s  flag-message	             # Star a message
+bind  index,pager c  mail                                              # compose
+bind  generic     x  tag-entry		                               # Select Conversation
+bind  index       x  tag-thread		                               # Select Conversation
+bind  pager       x  tag-message	                               # Select Conversation
+bind  index,pager s  flag-message	                               # Star a message
 
-bind  index,pager a  group-reply	             # Reply all
-bind  index,pager \# delete-thread	           # Delete
-bind  index,pager l  copy-message	             # Label
-#bind  index,pager v  save-message	           # Move to
+bind  index,pager a  group-reply	                               # Reply all
+bind  index,pager \# delete-thread	                               # Delete
+bind  index,pager l  copy-message	                               # Label
+#bind  index,pager v  save-message	                               # Move to
 
 
 # Gmail macros
