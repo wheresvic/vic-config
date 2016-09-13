@@ -10,7 +10,7 @@ set imap_user           = "victorparmar@gmail.com"
 set imap_keepalive      = 30
 unset imap_passive                                                     # allow mutt to open new imap connection automatically
 set folder              = "imaps://imap.gmail.com"
-set spoolfile           = "+[Gmail]/All Mail"
+set spoolfile           = "+INBOX"
 set postponed           = "+[Gmail]/Drafts"
 set header_cache        = ~/.mutt/victorparmar/headers
 set message_cachedir    = ~/.mutt/victorparmar/bodies
@@ -60,7 +60,7 @@ set status_chars        = " *%A"
 set status_format       = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
 
 # mailboxes /var/mail/vic ~/Mail/sent
-mailboxes ='INBOX' ='[Gmail]/All Mail' ='[Gmail]/Drafts' ='[Gmail]/Sent Mail' ='work'
+mailboxes ='INBOX' ='[Gmail]/All Mail' ='[Gmail]/Drafts' ='[Gmail]/Sent Mail' ='work' ='0inbox'
 
 set pager_index_lines   = 10                                           # number of index lines to show
 set pager_context       = 5                                            # When going to the next page, keep the bottom two lines of this page on top so that I have some context
@@ -88,12 +88,13 @@ bind  index,pager s  flag-message	                               # Star a messag
 bind  index,pager a  group-reply	                               # Reply all
 bind  index,pager \# delete-thread	                               # Delete
 bind  index,pager l  copy-message	                               # Label
-#bind  index,pager v  save-message	                               # Move to
+bind  index,pager m  save-message	                               # Move to
 
 
 # Gmail macros
 macro index,pager I  <set-flag>O	"Mark as read"
 macro index,pager U  <clear-flag>O	"Mark as unread"
+macro index,pager g0 <change-folder>=0inbox<enter>		"Go to 0inbox"
 macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>"	"Go to all mail"
 macro index,pager gs <change-folder>=[Gmail]/Starred<enter>	"Go to 'Starred'"
 macro index,pager gd <change-folder>=[Gmail]/Drafts<enter>	"Go to 'Drafts'"
@@ -101,12 +102,14 @@ macro index,pager gl <change-folder>?				"Go to 'Label'"
 macro index,pager gi <change-folder>=INBOX<enter> 		"Go to inbox"
 macro index,pager gt "<change-folder>=[Gmail]/Sent Mail<enter>"	"Go to 'Sent Mail'"
 macro index,pager d "<save-message>=[Gmail]/Trash<enter>" "Trash"
-macro index,pager +  <save-message>=[Gmail]/Important<enter><enter> "Mark as important"
-macro index,pager !  <save-message>=[Gmail]/Spam<enter><enter> "Report spam"
+macro index,pager +  <save-message>=[Gmail]/Important<enter> "Mark as important"
+macro index,pager !  <save-message>=[Gmail]/Spam<enter> "Report spam"
 #macro index,pager e  "<save-message>=[All]/Gmail Mail<enter><enter>" "Archive conversation"
+macro index,pager 0  "<save-message>=0inbox<enter>" "0inbox conversation"
 
 #folder-hook +INBOX 'macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive conversation"'
-folder-hook +[Gmail]/Trash macro index,pager y <save-message>=INBOX<enter><enter> "Move to inbox"
+folder-hook +[Gmail]/Trash macro index,pager y <save-message>=INBOX<enter> "Move to inbox"
+folder-hook +0inbox 'macro index,pager y <save-message>=INBOX<enter> "Move to inbox"'
 folder-hook +[Gmail]/Starred bind  index,pager y flag-message #"Toggle star"
 
 
