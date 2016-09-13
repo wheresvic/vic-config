@@ -116,6 +116,7 @@ set sort_alias		= alias
 set reverse_alias	= yes
 set reverse_name	= yes
 
+set signature           = ~/.mutt/signature
 
 # colors!
 source ~/vic-config/mutt-colors-solarized-dark-256.muttrc 
