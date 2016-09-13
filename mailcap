@@ -1,0 +1,3 @@
+application/pdf; evince '%s' ; test=test "$DISPLAY" != ""
+text/html; google-chrome %s; test=test "$DISPLAY" != ""
+
