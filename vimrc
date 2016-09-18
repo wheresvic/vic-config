@@ -2,6 +2,9 @@
 "Show line numbers
 set number
 
+"Convert tabs to spaces
+set expandtab
+
 "Hard line wrap at 80 chars
 "set textwidth=80
 "set formatoptions+=t
