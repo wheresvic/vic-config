@@ -75,6 +75,11 @@ unset markers                                                          # In the 
 
 
 # Custom keybindings
+bind index,pager ! noop                                                # unbind report-spam
+bind index,pager \# noop                                               # unbind delete-thread
+bind index,pager % noop                                                # unbind toggle-write                          
+bind index,pager & noop                                                # unbind link-threads 
+
 bind index,pager b noop                                                # Unbind bounce
 bind index,pager A create-alias                                        # bind alias-creation
 bind pager <up> previous-line                                          # scroll inside the message rather than the index
@@ -90,7 +95,7 @@ bind  pager       x  tag-message	                               # Select Convers
 bind  index,pager s  flag-message	                               # Star a message
 
 bind  index,pager a  group-reply	                               # Reply all
-bind  index,pager \# delete-thread	                               # Delete
+#bind  index,pager \# delete-thread	                               # Delete
 bind  index,pager l  copy-message	                               # Label
 bind  index,pager m  save-message	                               # Move to
 
@@ -107,7 +112,7 @@ macro index,pager gi <change-folder>=INBOX<enter> 		"Go to inbox"
 macro index,pager gt "<change-folder>=[Gmail]/Sent Mail<enter>"	"Go to 'Sent Mail'"
 macro index,pager d "<save-message>=[Gmail]/Trash<enter>" "Trash"
 macro index,pager +  <save-message>=[Gmail]/Important<enter> "Mark as important"
-macro index,pager !  <save-message>=[Gmail]/Spam<enter> "Report spam"
+#macro index,pager !  <save-message>=[Gmail]/Spam<enter> "Report spam"
 #macro index,pager e  "<save-message>=[All]/Gmail Mail<enter><enter>" "Archive conversation"
 macro index,pager 0  "<save-message>=0inbox<enter>" "0inbox conversation"
 
