@@ -127,6 +127,7 @@ set alias_file		= ~/.mutt/aliases
 set sort_alias		= alias
 set reverse_alias	= yes
 set reverse_name	= yes
+source $alias_file
 
 set signature           = ~/.mutt/signature
 
