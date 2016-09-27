@@ -21,6 +21,8 @@ Current email workflow:
 - aliases support
 - not using `offlineimap` and `notmuch` due to non-availablily of realtime sync
 
+To modify drafts in gmail, need to compose and pick a draft. Jumping to the drafts folder and editing a message there will not change anything :(
+
 # Scripts
 
 Generally a better idea to copy the scripts rather than creating symlinks. If your github account is compromised, this could be a very juicy attack vector :)
