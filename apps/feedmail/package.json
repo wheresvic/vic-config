@@ -10,6 +10,9 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.9.0",
-    "feedparser-promised": "^1.1.1"
+    "feedparser-promised": "^1.1.1",
+    "nodemailer": "^2.6.4",
+    "validator": "^6.1.0",
+    "winston": "^2.2.0"
   }
 }

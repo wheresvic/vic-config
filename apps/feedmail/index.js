@@ -1,23 +1,47 @@
-const feedparser = require('feedparser-promised');
-const program = require('commander');
+var feedparser = require('feedparser-promised');
+var program = require('commander');
+
+var logger = require('./logger.js').logger;
 
 program
   .version('1.0.0')
-  // .option('-u, --peppers', 'Add peppers')
-  // .option('-P, --pineapple', 'Add pineapple')
-  // .option('-b, --bbq-sauce', 'Add bbq sauce')
+  .option('-u, --email-username [username]', 'Email username')
+  .option('-p, --email-password [password]', 'Email password')
+  .option('-t, --to-email [to]', 'To email')
   // .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
   .parse(process.argv);
 
-const url = process.argv[2];
+var url = program.args[0];
+var toEmailAddress = program.toEmail;
 
-feedparser.parse(url).then((items) => {
+var emailerOptions = {
+  username: program.emailUsername,
+  password: program.emailPassword
+};
+
+var emailer = require('./emailer')(logger, emailerOptions);
+
+feedparser.parse(url).then(items => {
     if (items.length) {
-      console.log(items[0].description);
+      var title = items[0].title;
+      var htmlContent = items[0].description;
+
+      logger.debug(title);
+
+      if (toEmailAddress) {
+        emailer.sendEmail(toEmailAddress, title, '', htmlContent, function(err, info) {
+          if (err) {
+            logger.error(err);
+            return;
+          }
+
+          logger.info(info);
+        });
+      }
     }
   })
-  .catch((error) => {
-    console.log(error);
+  .catch(err => {
+    logger.error(err);
   });
 
 // console.log(url);
