@@ -1,3 +1,5 @@
+#!/usr/bin/env /home/victor/.nvm/versions/node/v6.9.0/bin/node
+
 var feedparser = require('feedparser-promised');
 var program = require('commander');
 
