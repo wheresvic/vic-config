@@ -1,0 +1,15 @@
+{
+  "name": "feedmail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Parmar",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "feedparser-promised": "^1.1.1"
+  }
+}
