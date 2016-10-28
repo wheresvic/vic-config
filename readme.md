@@ -21,7 +21,27 @@ Current email workflow:
 - aliases support
 - not using `offlineimap` and `notmuch` due to non-availablily of realtime sync
 
-To modify drafts in gmail, need to compose and pick a draft. Jumping to the drafts folder and editing a message there will not change anything :(
+## Modify drafts in gmail
+
+Need to compose and pick a draft. Jumping to the drafts folder and editing a message there will not change anything :(
+
+For the most part, ? will open up a help window with the available commands and the top bar also indicates common actions, but nevertheless here are some useful commands:
+
+## Changing folders
+
+- `c`, `?` to open the list of folders, 
+- `tab` to switch between mailboxes
+
+## Sync mailbox
+
+`$`
+
+## Forwarding a message with attachments
+
+1. Type `v` to get to the attachments screen. \
+1. Type `t` repeatedly to tag all the attachments, including the initial small text/plain attachment (that's the original message body). 
+1. When they're all tagged, type `;f` (forward all tagged attachments). 
+1. After you fill in the `To:` prompt, you'll be able to edit the message body, and when you leave the editor, you'll have the attachment list there to edit as you see fit.
 
 # Scripts
 
