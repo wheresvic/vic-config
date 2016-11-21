@@ -57,7 +57,7 @@ auto_view text/html                                                    # autovie
 alternative_order text/plain text/enriched text/html                   # save html for last 
 
 set sidebar_delim       = '  │'
-set sidebar_visible     = yes
+set sidebar_visible     = no                                           # disable the sidebar, I never look at it anyways
 set sidebar_width       = 24
 
 set status_chars        = " *%A"
