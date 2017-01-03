@@ -52,11 +52,12 @@ set fast_reply                                                         # do not 
 set include                                                            # always include message when replying
 set forward_format      = "Fwd: %s"                                    # when forwarding email, simply add a Fwd to the subject
 set smart_wrap                                                         # dont wrap mid word
+set copy                = no                                           # dont store sent messages
 
 auto_view text/html                                                    # autoview html
 alternative_order text/plain text/enriched text/html                   # save html for last 
 
-set sidebar_delim       = '  │'
+# set sidebar_delim       = '  │'                                      # apparently, this does not work anymore
 set sidebar_visible     = no                                           # disable the sidebar, I never look at it anyways
 set sidebar_width       = 24
 
