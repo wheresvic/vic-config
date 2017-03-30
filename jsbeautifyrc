@@ -48,7 +48,7 @@
     "indent_size": 2, // Indentation size
     "indent_with_tabs": false, // Indent with tabs, overrides `indent_size` and `indent_char`
     "jslint_happy": false, // If true, then jslint-stricter mode is enforced
-    "keep_array_indentation": false, // Preserve array indentation
+    "keep_array_indentation": true, // Preserve array indentation
     "keep_function_indentation": false, // Preserve function indentation
     "max_preserve_newlines": 0, // Maximum number of line breaks to be preserved in one chunk (0 disables)
     "preserve_newlines": true, // Whether existing line breaks should be preserved
