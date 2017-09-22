@@ -47,3 +47,11 @@ For the most part, ? will open up a help window with the available commands and 
 
 Generally a better idea to copy the scripts rather than creating symlinks. If your github account is compromised, this could be a very juicy attack vector :)
 
+- `git-wtf.rb`: prints a status of the current branch in relation to all it's remotes
+- `git-authors.pl`: collates all commit data and lists authors in decreasing order
+- `compiz-free-memory.sh`: Free compiz memory
+- `free-memory.sh`: Flush all memory caches
+- `network-restart.sh`: Restart ubuntu network interface (useful for when VPN is acting up)
+- `set-font.sh`: ?
+- `stop-services.sh`: Stop all extra services
+
