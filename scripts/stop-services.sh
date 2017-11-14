@@ -3,13 +3,13 @@
 sudo service teamviewerd stop
 #sudo service teamviewerd status
 
-sudo service icecast2 stop
-sudo service icecast2 status
-sudo service mpd stop
-sudo service mpd status
+#sudo service icecast2 stop
+#sudo service icecast2 status
+#sudo service mpd stop
+#sudo service mpd status
 
-sudo service mongodb stop
-sudo service mongodb status
+sudo service mongod stop
+sudo service mongod status
 
 sudo service postgresql stop
 sudo service postgresql status
