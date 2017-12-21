@@ -2,7 +2,7 @@
 
 application/pdf; evince '%s' ; test=test "$DISPLAY" != ""
 #text/html; w3m -I %{charset} -T text/html; copiousoutput;
-#text/html; google-chrome %s; test=test "$DISPLAY" != ""
-text/html; firefox %s; test=test "$DISPLAY" != ""
+text/html; google-chrome %s; test=test "$DISPLAY" != ""
+#text/html; firefox %s; test=test "$DISPLAY" != ""
 image/*; eog %s; test=test "$DISPLAY" != ""
 
