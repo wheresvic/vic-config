@@ -1,0 +1,2 @@
+killall -HUP gnome-shell
+
