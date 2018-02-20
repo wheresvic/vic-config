@@ -1,8 +1,7 @@
-#!/usr/bin/env bash
-
-if [[ $COLORTERM = gnome-* && $TERM = xterm ]]  && infocmp gnome-256color >/dev/null 2>&1; then export TERM=gnome-256color
-elif [[ $TERM != dumb ]] && infocmp xterm-256color >/dev/null 2>&1; then export TERM=xterm-256color
-fi
+# Vic bash prompt inspired by Sexy bash prompt
+# To use this theme, create a folder `vic` under `themes`
+# copy this file under the created folder and rename to `vic.theme.bash`
+# and set the current theme variable in `~/.bashrc`
 
 if tput setaf 1 &> /dev/null; then
     if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
@@ -30,27 +29,24 @@ else
     RESET="\033[m"
 fi
 
-SCM_THEME_PROMPT_DIRTY=" ${red}✗"
-SCM_THEME_PROMPT_CLEAN=" ${bold_green}✓"
-SCM_THEME_PROMPT_PREFIX=" |"
-SCM_THEME_PROMPT_SUFFIX="${green}|"
-
-GIT_THEME_PROMPT_DIRTY=" ${red}✗"
-GIT_THEME_PROMPT_CLEAN=" ${bold_green}✓"
-GIT_THEME_PROMPT_PREFIX=" ${green}|"
-GIT_THEME_PROMPT_SUFFIX="${green}|"
-
-RVM_THEME_PROMPT_PREFIX="|"
-RVM_THEME_PROMPT_SUFFIX="|"
-
-THEME_CLOCK_FORMAT=${THEME_CLOCK_FORMAT:-"%Y-%m-%d %H:%M:%S"}
-
-function prompt_setter() {
-    #PS1="${bold_cyan}$(scm_char)${green}$(scm_prompt_info)${purple}$(ruby_version_prompt) ${yellow}\h ${reset_color}in ${green}\w ${reset_color}\n${green}→${reset_color} "
-    export PS1="\n$(battery_char) $(clock_char) $(clock_prompt) $(ruby_version_prompt) ${blue}\u ${white}at ${orange}\h ${white}in \[$ORANGE\]\w\n${bold_cyan}$(scm_char)${green}$(scm_prompt_info) ${green}→${reset_color}  "
+parse_git_dirty () {
+  [[ $(git status 2> /dev/null | tail -n1 | cut -c 1-17) != "nothing to commit" ]] && echo "*"
+}
+parse_git_branch () {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-# PROMPT_COMMAND=prompt_setter;
+get_node_version () {
+  node --version | head -c -1
+}
 
-safe_append_prompt_command prompt_setter
+# Note that the $(battery_percentage) requires the battery plugin
 
+function prompt_command() {
+	PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]$(battery_percentage)% | $(get_node_version) $(clock_prompt) \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+}
+
+THEME_CLOCK_COLOR=${THEME_CLOCK_COLOR:-"$ORANGE"}
+THEME_CLOCK_FORMAT=${THEME_CLOCK_FORMAT:-"%Y-%m-%d %H:%M:%S"}
+
+safe_append_prompt_command prompt_command
