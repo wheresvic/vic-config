@@ -1,0 +1,36 @@
+source ~/.mutt/common.muttrc 
+
+source "gpg -d ~/.mutt/vic-smalldata-tech.gpg |"
+
+set from                = "Victor Parmar <vic@smalldata.tech>"
+
+# Account info
+set imap_user           = "vic@smalldata.tech"
+set folder              = "imaps://imap.zoho.com"
+set spoolfile           = "+Inbox"
+set postponed           = "+Drafts"
+# set record              = "+Sent"
+set header_cache        = ~/.mutt/vic-smalldata-tech/headers
+set message_cachedir    = ~/.mutt/vic-smalldata-tech/bodies
+set certificate_file    = ~/.mutt/vic-smalldata-tech/certificates
+set smtp_url            = "smtp://smtp.zoho.com:465/"
+
+#set folder             = ~/Mail                                       # mailbox location
+#set tmpdir             = "/tmp"
+#set record             = "+sent" 
+#set mbox               = "+mbox"
+#set postponed          = "+postponed"
+
+# I think this is for the sidebar ...
+# mailboxes /var/mail/vic ~/Mail/sent
+# mailboxes ='INBOX' ='[Gmail]/All Mail' ='[Gmail]/Drafts' ='[Gmail]/Sent Mail' ='work' ='0inbox' ='expenses'
+
+macro index,pager gl <change-folder>?				          "Change folder"
+macro index,pager gi <change-folder>=INBOX<enter> 		"Go to inbox"
+macro index,pager g0 <change-folder>=Archive<enter>		"Go to Archive"
+macro index,pager 0  "<save-message>=Archive<enter>"  "Archive conversation"
+macro index,pager d  "<save-message>=Trash<enter>"    "Trash"
+macro index,pager ! <save-message>=Junk<enter>        "Report spam"
+
+
+push <show-version>

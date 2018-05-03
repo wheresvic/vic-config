@@ -1,0 +1,48 @@
+source ~/.mutt/common.muttrc 
+
+source "gpg -d ~/.mutt/victorparmar.gpg |"
+
+set from                = "Victor Parmar <victorparmar@gmail.com>"
+
+# Gmail info
+set imap_user           = "victorparmar@gmail.com"
+set folder              = "imaps://imap.gmail.com"
+set spoolfile           = "+INBOX"
+set postponed           = "+[Gmail]/Drafts"
+set header_cache        = ~/.mutt/victorparmar/headers
+set message_cachedir    = ~/.mutt/victorparmar/bodies
+set certificate_file    = ~/.mutt/victorparmar/certificates
+set smtp_url            = "smtp://victorparmar@smtp.gmail.com:587/"
+
+#set folder             = ~/Mail                                       # mailbox location
+#set tmpdir             = "/tmp"
+#set record             = "+sent" 
+#set mbox               = "+mbox"
+#set postponed          = "+postponed"
+
+# I think this is for the sidebar ...
+# mailboxes /var/mail/vic ~/Mail/sent
+mailboxes ='INBOX' ='[Gmail]/All Mail' ='[Gmail]/Drafts' ='[Gmail]/Sent Mail' ='work' ='0inbox' ='expenses'
+
+# Gmail macros
+macro index,pager I  <set-flag>O	                                     "Mark as read"
+macro index,pager U  <clear-flag>O	                                   "Mark as unread"
+macro index,pager g0 <change-folder>=0inbox<enter>		                 "Go to 0inbox"
+macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>"	       "Go to all mail"
+macro index,pager gs <change-folder>=[Gmail]/Starred<enter>	           "Go to 'Starred'"
+macro index,pager gd <change-folder>=[Gmail]/Drafts<enter>	           "Go to 'Drafts'"
+macro index,pager gl <change-folder>?				                           "Go to 'Label'"
+macro index,pager gi <change-folder>=INBOX<enter> 		                 "Go to inbox"
+macro index,pager gt "<change-folder>=[Gmail]/Sent Mail<enter>"	       "Go to 'Sent Mail'"
+macro index,pager d  "<save-message>=[Gmail]/Trash<enter>"             "Trash"
+macro index,pager +  <save-message>=[Gmail]/Important<enter>           "Mark as important"
+#macro index,pager ! <save-message>=[Gmail]/Spam<enter>                "Report spam"
+#macro index,pager e "<save-message>=[All]/Gmail Mail<enter><enter>"   "Archive conversation"
+macro index,pager 0  "<save-message>=0inbox<enter>"                    "0inbox conversation"
+
+#folder-hook +INBOX 'macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>"                                                  "Archive conversation"'
+folder-hook +[Gmail]/Trash macro index,pager y <save-message>=INBOX<enter> "Move to inbox"
+folder-hook +0inbox 'macro index,pager y <save-message>=INBOX<enter>   "Move to inbox"'
+folder-hook +[Gmail]/Starred bind  index,pager y flag-message          "Toggle star"
+
+push <show-version>

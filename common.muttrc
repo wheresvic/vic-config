@@ -1,0 +1,93 @@
+
+set editor              = "vim"                                        # use vim as the default editor
+set edit_headers        = yes
+set imap_keepalive      = 30
+unset imap_passive                                                     # allow mutt to open new imap connection automatically
+set move                = no                                           # Don't ask me to move messages out of my inbox when I quit.
+set quit                = ask-yes                                      # confirm before quitting
+set wait_key            = no                                           # Don't ask me to press a key to continue after I did a shell escape and came back
+set mbox_type           = Maildir                                      # mailbox type
+set timeout             = 60                                           # idle time before scanning
+set mail_check          = 60                                           # minimum time between scans
+set delete                                                             # don't ask, just do
+unset confirmappend                                                    # When saving a message, append the message to an existing mailbox without asking (Why should it ask, anyway? Mailboxes generally have multiple messages...)
+unset mark_old                                                         # read/new is good enough for me
+set beep_new                                                           # bell on new mails
+set pipe_decode                                                        # strip headers and eval mimes when piping
+set thorough_search                                                    # strip headers and eval mimes before searching
+
+ignore *                                                               # ignore all headers
+unignore from: to: cc: date: subject:                                  # show only these
+unhdr_order *                                                          # some distros order things by default
+hdr_order from: to: cc: date: subject:                                 # and in this order
+
+set date_format         = "%d-%m-%y"                                   # a simple date format
+set index_format        = "[%Z]  %D  %-20.20F  %s"                     # format of the index view, show all flags, date, the sender and finally the subject
+set sort                = threads                                      # like gmail
+set sort_aux            = reverse-last-date-received                   # like gmail
+set uncollapse_jump                                                    # don't collapse on an unread message
+set sort_re                                                            # thread based on regex
+set reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set fast_reply                                                         # do not ask for to, subject, etc when replying
+set include                                                            # always include message when replying
+set forward_format      = "Fwd: %s"                                    # when forwarding email, simply add a Fwd to the subject
+set smart_wrap                                                         # dont wrap mid word
+set copy                = no                                           # dont store sent messages
+
+auto_view text/html                                                    # autoview html
+alternative_order text/plain text/enriched text/html                   # save html for last 
+
+# set sidebar_delim       = '  │'                                      # apparently, this does not work anymore
+set sidebar_visible     = no                                           # disable the sidebar, I never look at it anyways
+set sidebar_width       = 24
+
+set status_chars        = " *%A"
+set status_format       = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+set pager_index_lines   = 10                                           # number of index lines to show
+set pager_context       = 5                                            # When going to the next page, keep the bottom two lines of this page on top so that I have some context
+set pager_stop          = yes                                          # If I'm at the end of a message and I try to go to the next page, don't move me to the next message
+set menu_scroll                                                        # scroll in menus
+set tilde                                                              # show tildes like in vim
+unset markers                                                          # In the pager, don't display + at the beginning of wrapped lines; it's distracting
+
+
+# Custom keybindings
+bind index,pager ! noop                                                # unbind report-spam
+bind index,pager g noop                                                # unbind whatever the g key does
+bind index,pager \# noop                                               # unbind delete-thread
+bind index,pager % noop                                                # unbind toggle-write                          
+bind index,pager & noop                                                # unbind link-threads 
+
+bind index,pager b noop                                                # Unbind bounce
+bind index,pager A create-alias                                        # bind alias-creation
+bind pager <up> previous-line                                          # scroll inside the message rather than the index
+bind pager <down> next-line                                            # scroll inside the message rather than the index
+
+
+# Gmail style keybindings
+bind  editor <space> noop
+bind  index,pager c  mail                                              # compose
+bind  generic     x  tag-entry		                                     # Select Conversation
+bind  index       x  tag-thread		                                     # Select Conversation
+bind  pager       x  tag-message	                                     # Select Conversation
+bind  index,pager s  flag-message	                                     # Star a message
+
+bind  index,pager a  group-reply	                                     # Reply all
+#bind  index,pager \# delete-thread	                                   # Delete
+bind  index,pager l  copy-message	                                     # Label
+bind  index,pager m  save-message	                                     # Move to
+
+# Contact aliases, could also use `goobook`.
+set alias_file		= ~/.mutt/aliases
+set sort_alias		= alias
+set reverse_alias	= yes
+set reverse_name	= yes
+source $alias_file
+
+set signature           = ~/.mutt/signature
+
+# colors!
+source ~/vic-config/mutt-colors-solarized-dark-256.muttrc 
+
+push <show-version>
