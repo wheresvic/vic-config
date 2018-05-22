@@ -1,0 +1,62 @@
+// Place your key bindings in this file to overwrite the defaults
+[{
+    "key": "ctrl+alt+l",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  /*
+  {
+    "key": "ctrl+alt+l",
+    "command": "HookyQR.beautify",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  */
+  /*{
+    "key": "ctrl+alt+l",
+    "command": "react.beautify",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == javascript"
+  },*/
+  {
+    "key": "ctrl+shift+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  }, {
+    "key": "ctrl+shift+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  }, {
+    "key": "ctrl+y",
+    "command": "editor.action.deleteLines",
+    "when": "editorTextFocus && !editorReadonly"
+  }, {
+    "key": "ctrl+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  { "key": "ctrl+alt+left", "command": "workbench.action.navigateBack" },
+  { "key": "ctrl+alt+right", "command": "workbench.action.navigateForward" },
+  {
+    "key": "ctrl+,",
+    "command": "workbench.action.terminal.focus",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+l",
+    "command": "react.beautify",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.joinLines"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "latex-workshop.build",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "latex-workshop.tab",
+    "when": "editorTextFocus"
+  },
+]

@@ -1,0 +1,101 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "files.autoSave": "onFocusChange",
+  "editor.fontSize": 15,
+  "editor.fontFamily": "'Droid Sans Mono', Hack, monospace",
+  "editor.rulers": [80],
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "indent",
+  "editor.roundedSelection": false,
+  "explorer.openEditors.visible": 20,
+  "editor.minimap.enabled": true,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+  "blankLine.showMessage": false,
+  "files.associations": {
+    "*.js": "javascript"
+  },
+  "files.exclude": {
+    "**/*.js": { "when": "$(basename).ts" }
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "Monokai",
+  "workbench.editor.enablePreview": false,
+  "path-intellisense.extensionOnImport": true,
+  "window.zoomLevel": 0,
+  "flow.useNPMPackagedFlow": true,
+  "vsicons.projectDetection.autoReload": true,
+  "explorer.confirmDragAndDrop": false,
+  
+  "extensions.ignoreRecommendations": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "git.confirmSync": false,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "rest-client.enableTelemetry": true,
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": [
+        "%DOCFILE%"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk",
+      "tools": [
+        "latexmk"
+      ]
+    },
+    {
+      "name": "xelatex",
+      "tools": [
+        "xelatex"
+      ]
+    },
+    {
+      "name": "pdflatex -> bibtex -> pdflatex*2",
+      "tools": [
+        "pdflatex",
+        "bibtex",
+        "pdflatex",
+        "pdflatex"
+      ]
+    }
+  ],
+  
+}

@@ -48,6 +48,18 @@ For the most part, ? will open up a help window with the available commands and 
 
 Another simple option might be to use `Esc E` to resend the current message in its entirety and then change the text along with the from and to addresses!
 
+## VSCode
+
+Symlink settings:
+
+```bash
+cd ~/.config/Code/User
+rm settings.json
+ln -s ~/vic-config/vscode/settings.json settings.json
+rm keybindings.json
+ln -s ~/vic-config/vscode/keybindings.json keybindings.json
+```
+
 ## Scripts
 
 Generally a better idea to copy the scripts rather than creating symlinks. If your github account is compromised, this could be a very juicy attack vector :)
