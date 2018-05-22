@@ -13,7 +13,7 @@ set postponed           = "+Drafts"
 set header_cache        = ~/.mutt/vic-smalldata-tech/headers
 set message_cachedir    = ~/.mutt/vic-smalldata-tech/bodies
 set certificate_file    = ~/.mutt/vic-smalldata-tech/certificates
-set smtp_url            = "smtp://smtp.zoho.com:465/"
+set smtp_url            = "smtp://$imap_user@smtp.zoho.com:587/"
 
 #set folder             = ~/Mail                                       # mailbox location
 #set tmpdir             = "/tmp"
