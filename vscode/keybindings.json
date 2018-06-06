@@ -59,4 +59,8 @@
     "command": "latex-workshop.tab",
     "when": "editorTextFocus"
   },
+  {
+    "key": "ctrl+alt+n",
+    "command": "workbench.action.terminal.focusNext"
+  },
 ]
