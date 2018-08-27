@@ -2,8 +2,9 @@
 {
   "files.autoSave": "onFocusChange",
   "editor.fontSize": 15,
+  "window.zoomLevel": 0,
   "editor.fontFamily": "'Droid Sans Mono', Hack, monospace",
-  "editor.rulers": [80],
+  "editor.rulers": [80, 120],
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "editor.wrappingIndent": "indent",
@@ -14,7 +15,8 @@
   "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
   "blankLine.showMessage": false,
   "files.associations": {
-    "*.js": "javascript"
+    "*.js": "javascript",
+    "*.mst": "html"
   },
   "files.exclude": {
     "**/*.js": { "when": "$(basename).ts" }
@@ -23,7 +25,6 @@
   "workbench.colorTheme": "Monokai",
   "workbench.editor.enablePreview": false,
   "path-intellisense.extensionOnImport": true,
-  "window.zoomLevel": 0,
   "flow.useNPMPackagedFlow": true,
   "vsicons.projectDetection.autoReload": true,
   "explorer.confirmDragAndDrop": false,
@@ -97,5 +98,6 @@
       ]
     }
   ],
-  
+  "prettier.printWidth": 120,
+  "workbench.sideBar.location": "left"
 }

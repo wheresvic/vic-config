@@ -1,8 +1,8 @@
 # As a cautionary note. You should never add to this list programs that may have bad effect on your system. For example adding an entry for application/x-sh (for a shell script) is a bad idea, as that could perfectly be a virus, and you certainly do not need to get infected by one. For the same reason, you should not associate a program to the file type application/octet-stream.
 
 application/pdf; evince '%s' ; test=test -n "$DISPLAY"; needsterminal;
-text/html; google-chrome %s; test=test -n "$DISPLAY"; nametemplate=%s.html; needsterminal; 
+#text/html; google-chrome %s; test=test -n "$DISPLAY"; nametemplate=%s.html; needsterminal; 
 image/*; eog %s; test=test -n "$DISPLAY"; needsterminal;
 
 #text/html; w3m -I %{charset} -T text/html; copiousoutput;
-#text/html; firefox %s & sleep 2; test=test -n "$DISPLAY"; nametemplate=%s.html; needsterminal;
+text/html; firefox %s & sleep 2; test=test -n "$DISPLAY"; nametemplate=%s.html; needsterminal;

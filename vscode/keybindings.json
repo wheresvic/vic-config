@@ -60,7 +60,7 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+alt+n",
+    "key": "ctrl+shift+n",
     "command": "workbench.action.terminal.focusNext"
   },
 ]
