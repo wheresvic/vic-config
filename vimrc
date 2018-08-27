@@ -1,8 +1,10 @@
 
-"Show line numbers
-set number
 
 "Convert tabs to spaces
+
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 "Hard line wrap at 80 chars
@@ -16,4 +18,32 @@ set expandtab
 
 "An ugly workaround could be to open a split and resize it to column 80, but this hardly feels like an ideal solution. (Especially since the location of the split will change when you resize your window)
 ":vnew | wincmd p | vertical res 80
+
+"filetype off
+"call pathogen#runtime_append_all_bundles()
+"filetype plugin indent on
+
+set nocompatible
+
+set modelines=0
+
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+"set visualbell
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+"Show line numbers
+set number
+"set relativenumber
+"set undofile
+
 
