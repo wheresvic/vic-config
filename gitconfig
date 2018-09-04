@@ -1,16 +1,22 @@
 [user]
-	name = Victor Parmar
-	email = vic@smalldata.tech
+        name = Victor Parmar
+        email = vic@smalldata.tech
+
 [merge]
 	tool = meld
+
 [push]
 	default = simple
+
 [diff]
-  tool = icdiff
+        tool = icdiff
+
 [difftool]
-  prompt = false
+        prompt = false
+
 [difftool "icdiff"]
-  cmd = /usr/local/bin/icdiff --highlight --line-numbers $LOCAL $REMOTE
+        cmd = /usr/local/bin/icdiff --highlight --line-numbers $LOCAL $REMOTE
+
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
