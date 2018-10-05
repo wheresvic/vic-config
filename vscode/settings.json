@@ -34,7 +34,7 @@
   "git.confirmSync": false,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
-  "rest-client.enableTelemetry": true,
+  "rest-client.enableTelemetry": false,
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk",
