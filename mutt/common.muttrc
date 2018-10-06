@@ -88,6 +88,6 @@ source $alias_file
 set signature           = ~/.mutt/signature
 
 # colors!
-source ~/vic-config/mutt-colors-solarized-dark-256.muttrc 
+source ~/vic-config/mutt/mutt-colors-solarized-dark-256.muttrc 
 
 push <show-version>
