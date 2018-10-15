@@ -59,7 +59,7 @@ bind index,pager \# noop                                               # unbind 
 bind index,pager % noop                                                # unbind toggle-write                          
 bind index,pager & noop                                                # unbind link-threads 
 
-bind index,pager b noop                                                # Unbind bounce
+#bind index,pager b noop                                                # Unbind bounce
 bind index,pager A create-alias                                        # bind alias-creation
 bind pager <up> previous-line                                          # scroll inside the message rather than the index
 bind pager <down> next-line                                            # scroll inside the message rather than the index
