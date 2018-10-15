@@ -9,13 +9,13 @@
 	default = simple
 
 [diff]
-        tool = icdiff
+        tool = meld
 
 [difftool]
         prompt = false
 
 [difftool "icdiff"]
-        cmd = /usr/local/bin/icdiff --highlight --line-numbers $LOCAL $REMOTE
+        cmd = icdiff --highlight --line-numbers $LOCAL $REMOTE
 
 [core]
 	excludesfile = ~/.gitignore
