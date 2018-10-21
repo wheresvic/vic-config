@@ -6,20 +6,14 @@ set from                = "Victor Parmar <vic@smalldata.tech>"
 
 # Account info
 set imap_user           = "vic@smalldata.tech"
-set folder              = "imaps://imap.zoho.com"
+set folder              = "imaps://imap.migadu.com"
 set spoolfile           = "+Inbox"
 set postponed           = "+Drafts"
-# set record              = "+Sent"
+set record              = "+Sent"
 set header_cache        = ~/.mutt/vic-smalldata-tech/headers
 set message_cachedir    = ~/.mutt/vic-smalldata-tech/bodies
 set certificate_file    = ~/.mutt/vic-smalldata-tech/certificates
-set smtp_url            = "smtp://$imap_user@smtp.zoho.com:587/"
-
-#set folder             = ~/Mail                                       # mailbox location
-#set tmpdir             = "/tmp"
-#set record             = "+sent" 
-#set mbox               = "+mbox"
-#set postponed          = "+postponed"
+set smtp_url            = "smtp://$imap_user@smtp.migadu.com:587/"
 
 # I think this is for the sidebar ...
 # mailboxes /var/mail/vic ~/Mail/sent
@@ -28,9 +22,9 @@ set smtp_url            = "smtp://$imap_user@smtp.zoho.com:587/"
 macro index,pager gl <change-folder>?				          "Change folder"
 macro index,pager gi <change-folder>=INBOX<enter> 		"Go to inbox"
 macro index,pager g0 <change-folder>=Archive<enter>		"Go to Archive"
+macro index,pager gt <change-folder>=Sent<enter>		  "Go to Sent"
 macro index,pager 0  "<save-message>=Archive<enter>"  "Archive conversation"
 macro index,pager d  "<save-message>=Trash<enter>"    "Trash"
 macro index,pager ! <save-message>=Junk<enter>        "Report spam"
-
 
 push <show-version>
