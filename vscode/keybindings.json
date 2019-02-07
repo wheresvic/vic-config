@@ -1,5 +1,6 @@
 // Place your key bindings in this file to overwrite the defaults
-[{
+[
+  {
     "key": "ctrl+alt+l",
     "command": "editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
@@ -20,15 +21,18 @@
     "key": "ctrl+shift+down",
     "command": "editor.action.moveLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
-  }, {
+  },
+  {
     "key": "ctrl+shift+up",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus && !editorReadonly"
-  }, {
+  },
+  {
     "key": "ctrl+y",
     "command": "editor.action.deleteLines",
     "when": "editorTextFocus && !editorReadonly"
-  }, {
+  },
+  {
     "key": "ctrl+d",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
@@ -63,4 +67,5 @@
     "key": "ctrl+shift+n",
     "command": "workbench.action.terminal.focusNext"
   },
+  { "key": "ctrl+shift+r", "command": "latex-workshop.recipes", "when": "editorTextFocus" }
 ]
