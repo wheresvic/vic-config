@@ -15,4 +15,4 @@
 ## Fetch mail shortcut
 #bind index G imap-fetch-mail
 
-source ~/.mutt/victorparmar.muttrc
+source ~/.mutt/vic-smalldata-tech.muttrc
