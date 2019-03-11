@@ -108,5 +108,6 @@
     "TODO": {},
     "FIXME": {}
   },
-  "editor.renderIndentGuides": false
+  "editor.renderIndentGuides": false,
+  "go.inferGopath": true
 }
