@@ -37,21 +37,25 @@ parse_git_branch () {
 }
 
 get_node_version () {
-  node --version | head -c -1
+  node --version
 }
 
 get_go_version () {
   gvm-prompt
 }
 
+get_python_version () {
+  python --version | cut -d" " -f2
+}
+
 # Note that the $(battery_percentage) requires the battery plugin
 
 function prompt_command() {
-	PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]$(battery_percentage)% | $(get_node_version), $(get_go_version) $(clock_prompt) \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+	PS1="\[${BOLD}${MAGENTA}\]\u\[$WHITE\]@\[$ORANGE\]\h \[$WHITE\]$(battery_percentage)%, $(get_node_version), $(get_go_version), $(get_python_version) $(clock_prompt) \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 }
 
 THEME_CLOCK_COLOR=${THEME_CLOCK_COLOR:-"$ORANGE"}
-THEME_CLOCK_FORMAT=${THEME_CLOCK_FORMAT:-"%Y-%m-%d %H:%M:%S"}
+THEME_CLOCK_FORMAT=${THEME_CLOCK_FORMAT:-"%d-%m %H:%M:%S"}
 
 safe_append_prompt_command prompt_command
 
