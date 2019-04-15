@@ -109,5 +109,11 @@
     "FIXME": {}
   },
   "editor.renderIndentGuides": false,
-  "go.inferGopath": true
+  "go.inferGopath": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
