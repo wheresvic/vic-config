@@ -51,7 +51,7 @@ get_python_version() {
 # Note that the $(battery_percentage) requires the battery plugin
 
 function prompt_command() {
-	PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]$(battery_percentage) | $(get_node_version), $(get_go_version), $(get_python_version) $(clock_prompt) \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+	PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]$(get_node_version), $(get_go_version), $(get_python_version) $(clock_prompt) \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 }
 
 THEME_CLOCK_COLOR=${THEME_CLOCK_COLOR:-"$ORANGE"}
