@@ -21,16 +21,13 @@
   "files.exclude": {
     "**/*.js": { "when": "$(basename).ts" }
   },
-  "workbench.iconTheme": "vscode-icons",
   "workbench.colorTheme": "Monokai",
   "workbench.editor.enablePreview": false,
   "path-intellisense.extensionOnImport": true,
   "flow.useNPMPackagedFlow": true,
-  "vsicons.projectDetection.autoReload": true,
   "explorer.confirmDragAndDrop": false,
   
   "extensions.ignoreRecommendations": false,
-  "vsicons.dontShowNewVersionMessage": true,
   "git.confirmSync": false,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
@@ -115,5 +112,5 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  }
 }
