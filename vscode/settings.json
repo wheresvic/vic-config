@@ -138,6 +138,10 @@
       "value": "#639"
     },
     {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
       "name": "Java Blue-Gray",
       "value": "#557c9b"
     },
@@ -165,5 +169,12 @@
       "name": "Vue Green",
       "value": "#42b883"
     }
-  ]
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
