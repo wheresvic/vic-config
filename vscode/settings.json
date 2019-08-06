@@ -106,7 +106,6 @@
     "FIXME": {}
   },
   "editor.renderIndentGuides": false,
-  "go.inferGopath": true,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
