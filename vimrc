@@ -47,3 +47,23 @@ set number
 "set undofile
 
 
+" vim-plug
+call plug#begin('~/.vim/plugged')
+
+" plugin section
+
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree'
+
+" end vim-plug
+call plug#end()
+
+
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+map <C-t> :NERDTreeToggle<CR>
+
