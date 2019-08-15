@@ -4,7 +4,16 @@ Should really be `dotfiles` but this might end up being storage for all sorts of
 
 ## Vim
 
-- soft wrapping at 80 characters is unfortunately not possible
+See [https://levelup.gitconnected.com/vim-for-react-and-typescript-oh-my-40b700c32cc](https://levelup.gitconnected.com/vim-for-react-and-typescript-oh-my-40b700c32cc) for vim-plug setup. Long story short:
+
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+followed by starting vim and then `:PlugInstall`.
+
+Note that soft wrapping at 80 characters is unfortunately not possible.
 
 ## Mutt
 
