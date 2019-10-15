@@ -177,6 +177,7 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "todo-tree.highlights.customHighlight": {
     "TODO": {},
     "FIXME": {}
