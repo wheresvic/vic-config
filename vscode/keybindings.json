@@ -67,5 +67,13 @@
     "key": "ctrl+shift+r",
     "command": "latex-workshop.recipes",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.newWindow"
   }
 ]
