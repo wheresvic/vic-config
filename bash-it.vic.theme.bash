@@ -45,8 +45,9 @@ get_go_version () {
 }
 
 get_python_version() {
-  python --version | head -c -1
+  # python --version | head -c -1
   # python --version | cut -d" " -f2
+  python -c 'import sys; print("Python " + ".".join(map(str, sys.version_info[:3])))'
 }
 
 # Note that the $(battery_percentage) requires the battery plugin
