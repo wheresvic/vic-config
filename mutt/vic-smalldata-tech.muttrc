@@ -1,12 +1,12 @@
 source ~/.mutt/common.muttrc 
 
-source "gpg -d ~/.mutt/vic-smalldata-tech.gpg |"
+source "gpg -d ~/.mutt/vic-fastmail.gpg |"
 
 set from                = "Victor Parmar <vic@smalldata.tech>"
 
 # Account info
 set imap_user           = "vic@smalldata.tech"
-set folder              = "imaps://imap.migadu.com"
+set folder              = "imaps://imap.fastmail.com"
 set copy                = yes
 set spoolfile           = "+Inbox"
 set postponed           = "+Drafts"
@@ -14,7 +14,7 @@ set record              = "+Sent"
 set header_cache        = ~/.mutt/vic-smalldata-tech/headers
 set message_cachedir    = ~/.mutt/vic-smalldata-tech/bodies
 set certificate_file    = ~/.mutt/vic-smalldata-tech/certificates
-set smtp_url            = "smtp://$imap_user@smtp.migadu.com:587/"
+set smtp_url            = "smtp://$imap_user@smtp.fastmail.com:587/"
 
 macro index,pager gl <change-folder>?				          "Change folder"
 macro index,pager gi <change-folder>=INBOX<enter> 		"Go to inbox"
