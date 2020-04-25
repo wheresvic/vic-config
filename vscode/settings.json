@@ -19,7 +19,13 @@
     "*.mst": "html"
   },
   "files.exclude": {
-    "**/*.js": { "when": "$(basename).ts" }
+    "**/*.js": {
+      "when": "$(basename).ts"
+    },
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
   },
   "workbench.colorTheme": "Monokai",
   "workbench.editor.enablePreview": false,
@@ -189,6 +195,11 @@
   "markdownlint.config": {
     "MD013": false,
     "MD014": false
-  }
+  },
+  "terminal.integrated.rendererType": "dom",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "todo-tree.tree.showScanModeButton": false
 }
 
