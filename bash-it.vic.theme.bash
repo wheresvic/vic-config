@@ -41,19 +41,24 @@ get_node_version () {
 }
 
 get_go_version () {
-  gvm-prompt
+  # gvm-prompt
+  echo ""
 }
 
 get_python_version() {
   # python --version | head -c -1
   # python --version | cut -d" " -f2
-  python -c 'import sys; print("Python " + ".".join(map(str, sys.version_info[:3])))'
+  python3 -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'
+}
+
+get_python_path() {
+  which python
 }
 
 # Note that the $(battery_percentage) requires the battery plugin
 
 function prompt_command() {
-	PS1="\[${BOLD}${MAGENTA}\]\u\[$WHITE\]@\[$ORANGE\]\h \[$WHITE\]$(battery_percentage)%, $(get_node_version), $(get_go_version), $(get_python_version) $(clock_prompt) \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+  PS1="\[${BOLD}${MAGENTA}\]\u\[$WHITE\]@\[$ORANGE\]\h \[$WHITE\]$(battery_percentage)%, $(get_node_version), $(get_go_version), $(get_python_path):$(get_python_version) $(clock_prompt) \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
 }
 
 THEME_CLOCK_COLOR=${THEME_CLOCK_COLOR:-"$ORANGE"}
