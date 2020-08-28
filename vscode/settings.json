@@ -200,6 +200,11 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "latex-workshop.view.pdf.viewer": "tab",
-  "todo-tree.tree.showScanModeButton": false
+  "todo-tree.tree.showScanModeButton": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.columnSelection": false,
 }
 
