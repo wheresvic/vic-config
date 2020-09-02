@@ -67,7 +67,10 @@ rm keybindings.json
 ln -s ~/vic-config/vscode/keybindings.json keybindings.json
 ```
 
-## Scripts
+## Starship
 
-Generally a better idea to copy the scripts rather than creating symlinks. If your github account is compromised, this could be a very juicy attack vector :)
+```bash
+cd ~/.config
+ln -s ~/vic-config/starship.toml starship.toml
+```
 
