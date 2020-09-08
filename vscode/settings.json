@@ -101,7 +101,6 @@
       ]
     }
   ],
-  "prettier.printWidth": 120,
   "workbench.sideBar.location": "left",
   "todo-tree.defaultHighlight": {
     "foreground": "green",
