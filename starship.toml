@@ -31,14 +31,12 @@ command = "which python"
 when = "exit 0"
 #directories = ["."]
 #extensions = [".py"]
-prefix = "("
-suffix = ")"
+format = "($output)"
 disabled = true
 
 [custom.temp]
 command = "vcgencmd measure_temp | head -c -1"
 when = "test -f /usr/bin/vcgencmd"
-prefix = ""
-suffix = "'C"
+format = "$output'C"
 disabled = false
 
