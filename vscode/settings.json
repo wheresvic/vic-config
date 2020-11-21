@@ -3,7 +3,7 @@
   "files.autoSave": "onFocusChange",
   "editor.fontSize": 15,
   "window.zoomLevel": 0,
-  "editor.fontFamily": "'Droid Sans Mono', 'DroidSansMono Nerd Font Mono', Hack, monospace",
+  "editor.fontFamily": "'Droid Sans Mono', 'DroidSansMono Nerd Font Mono', 'Courier Prime Code', 'Fira Code Retina', Hack, monospace",
   "editor.rulers": [80, 120],
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
@@ -206,5 +206,6 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "editor.columnSelection": false,
+  "prettier.prettierPath": "/home/vic/.nvm/versions/node/v12.16.2/bin",
 }
 
