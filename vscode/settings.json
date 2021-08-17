@@ -3,7 +3,7 @@
   "files.autoSave": "onFocusChange",
   "editor.fontSize": 15,
   "window.zoomLevel": 0,
-  "editor.fontFamily": "'Droid Sans Mono', 'DroidSansMono Nerd Font Mono', Hack, monospace",
+  "editor.fontFamily": "Hasklig,'Droid Sans Mono', 'DroidSansMono Nerd Font Mono', 'Courier Prime Code', 'Fira Code Retina', 'Cascadia Code',  Hack, monospace",
   "editor.rulers": [80, 120],
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
