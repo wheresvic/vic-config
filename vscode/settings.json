@@ -113,7 +113,7 @@
   },
   "editor.renderIndentGuides": false,
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -206,5 +206,15 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "editor.columnSelection": false,
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
 }
 
