@@ -43,12 +43,13 @@ ln -s ~/vic-config/vscode/keybindings.json keybindings.json
 # Git
 
 cd ~
+rm .gitconfig .githelpers
 ln -s ~/vic-config/git/gitconfig .gitconfig
 ln -s ~/vic-config/git/githelpers .githelpers
 
 # Starship
 
+mkdir -p ~/.config
 cd ~/.config
 ln -s ~/vic-config/starship.toml starship.toml
-
 
