@@ -34,6 +34,7 @@ set forward_format      = "Fwd: %s"                                    # when fo
 set smart_wrap                                                         # dont wrap mid word
 set copy                = no                                           # dont store sent messages
 
+set mailcap_path=~/.mutt/mailcap
 auto_view text/html                                                    # autoview html
 alternative_order text/plain text/enriched text/html                   # save html for last 
 
