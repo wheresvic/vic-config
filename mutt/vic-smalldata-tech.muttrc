@@ -4,6 +4,9 @@ source "gpg -d ~/.mutt/vic-fastmail.gpg |"
 
 set from                = "Victor Parmar <vic@smalldata.tech>"
 
+# macos specific, required for sending email via smtp
+set smtp_authenticators = "login"
+
 # Account info
 set imap_user           = "vic@smalldata.tech"
 set folder              = "imaps://imap.fastmail.com"
