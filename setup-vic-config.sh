@@ -21,6 +21,7 @@ ln -s $aliasesDir/aliases aliases
 ln -s ~/vic-config/mutt/common.muttrc common.muttrc
 ln -s ~/vic-config/mutt/mutt-signature signature
 ln -s ~/vic-config/mutt/vic-smalldata-tech.muttrc vic-smalldata-tech.muttrc
+ln -s ~/vic-config/mutt/mailcap mailcap
 
 cd ~
 ln -s ~/vic-config/mutt/mailcap .mailcap
