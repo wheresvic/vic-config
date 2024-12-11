@@ -30,12 +30,10 @@
   "workbench.colorTheme": "Monokai",
   "workbench.editor.enablePreview": false,
   "path-intellisense.extensionOnImport": true,
-  "flow.useNPMPackagedFlow": true,
   "explorer.confirmDragAndDrop": false,
-
   "extensions.ignoreRecommendations": false,
   "git.confirmSync": false,
-  "rest-client.enableTelemetry": false,
+  "latex-workshop.latex.autoBuild.run": "never",
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk",
@@ -60,6 +58,10 @@
   ],
   "latex-workshop.latex.recipes": [
     {
+      "name": "pdflatex",
+      "tools": ["pdflatex"],      
+    },
+    {
       "name": "latexmk",
       "tools": ["latexmk"]
     },
@@ -70,18 +72,10 @@
     {
       "name": "pdflatex -> bibtex -> pdflatex*2",
       "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
-    }
+    },    
   ],
   "prettier.printWidth": 120,
   "workbench.sideBar.location": "left",
-  "todo-tree.defaultHighlight": {
-    "foreground": "green",
-    "type": "none"
-  },
-  "todo-tree.customHighlight": {
-    "TODO": {},
-    "FIXME": {}
-  },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
@@ -92,65 +86,20 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "peacock.favoriteColors": [
-    {
-      "name": "Angular Red",
-      "value": "#b52e31"
-    },
-    {
-      "name": "Auth0 Orange",
-      "value": "#eb5424"
-    },
-    {
-      "name": "Azure Blue",
-      "value": "#007fff"
-    },
-    {
-      "name": "C# Purple",
-      "value": "#68217A"
-    },
-    {
-      "name": "Gatsby Purple",
-      "value": "#639"
-    },
-    {
-      "name": "Go Cyan",
-      "value": "#5dc9e2"
-    },
-    {
-      "name": "Java Blue-Gray",
-      "value": "#557c9b"
-    },
-    {
-      "name": "JavaScript Yellow",
-      "value": "#f9e64f"
-    },
-    {
-      "name": "Mandalorian Blue",
-      "value": "#1857a4"
-    },
-    {
-      "name": "Node Green",
-      "value": "#215732"
-    },
-    {
-      "name": "React Blue",
-      "value": "#00b3e6"
-    },
-    {
-      "name": "Something Different",
-      "value": "#832561"
-    },
-    {
-      "name": "Vue Green",
-      "value": "#42b883"
-    }
-  ],
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -159,31 +108,19 @@
     "FIXME": {}
   },
   "todo-tree.highlights.defaultHighlight": {
-    "foreground": "green",
+    "foreground": "#6eff6e",
     "type": "none"
   },
+  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]"],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "markdownlint.config": {
     "MD013": false,
     "MD014": false
   },
-  "terminal.integrated.rendererType": "dom",
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "latex-workshop.view.pdf.viewer": "tab",
-  "todo-tree.tree.showScanModeButton": false,
   "workbench.startupEditor": "newUntitledFile",
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "todo-tree.general.tags": ["BUG", "HACK", "FIXME", "TODO", "XXX", "[ ]", "[x]"],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "editor.guides.indentation": false,
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "json.schemas": [
     {
       "fileMatch": ["/package.json"],
