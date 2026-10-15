@@ -54,3 +54,11 @@ mkdir -p ~/.config
 cd ~/.config
 ln -s ~/vic-config/starship.toml starship.toml
 
+
+# Claude Code
+
+mkdir -p ~/.claude
+cd ~/.claude
+ln -sfn ~/vic-config/claude/statusline.sh statusline.sh
+# then add to ~/.claude/settings.json:
+#   "statusLine": { "type": "command", "command": "~/.claude/statusline.sh" }
